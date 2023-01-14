@@ -34,7 +34,7 @@ input.addEventListener("input", () => {
     input.value = null;
   }
 });
-input.addEventListener("keypress", (event) => {
+input.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) {
     createBoxes();
   }
