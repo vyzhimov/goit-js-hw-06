@@ -26,6 +26,12 @@ const input = controls.children[0];
 const btnCreate = controls.children[1];
 const btnDestroy = controls.children[2];
 
+input.addEventListener("input", () => {
+  if (input.value > 100) {
+    alert("введіть число від 1 до 100");
+    input.value = null;
+  }
+});
 input.addEventListener("keypress", (event) => {
   if (event.keyCode === 13) {
     addBoxes();
