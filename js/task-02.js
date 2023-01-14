@@ -8,12 +8,12 @@ const ingredients = [
 ];
 
 const list = document.querySelector("#ingredients");
-const fragment = document.createDocumentFragment();
 
+const liItems = [];
 ingredients.map((item) => {
   const liElem = document.createElement("li");
   liElem.textContent = item;
-  fragment.appendChild(liElem);
+  liItems.push(liElem);
 });
 
-list.appendChild(fragment);
+list.append(...liItems);
