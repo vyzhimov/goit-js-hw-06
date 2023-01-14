@@ -2,9 +2,9 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-function addBoxes() {
-  DestroyBoxes();
-  const amount = input.value;
+function createBoxes(amount) {
+  destroyBoxes();
+  amount = input.value;
   let boxSize = 30;
   for (let i = 0; i < amount; i++) {
     const divItem = document.createElement("div");
@@ -16,7 +16,7 @@ function addBoxes() {
   }
 }
 
-function DestroyBoxes() {
+function destroyBoxes() {
   divBoxes.innerHTML = "";
 }
 
@@ -34,8 +34,8 @@ input.addEventListener("input", () => {
 });
 input.addEventListener("keypress", (event) => {
   if (event.keyCode === 13) {
-    addBoxes();
+    createBoxes();
   }
 });
-btnCreate.addEventListener("click", addBoxes);
-btnDestroy.addEventListener("click", DestroyBoxes);
+btnCreate.addEventListener("click", createBoxes);
+btnDestroy.addEventListener("click", destroyBoxes);
