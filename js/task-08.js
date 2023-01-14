@@ -19,10 +19,11 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (inputEmail.value === "" || inputPassword.value === "") {
     alert("Необхідно заповнити всі поля");
+  } else {
+    userLogin.setEmail(inputEmail.value);
+    userLogin.setPassword(inputPassword.value);
+    form.reset();
+    console.log(`email: ${userLogin.email}`);
+    console.log(`password: ${userLogin.password}`);
   }
-  userLogin.setEmail(inputEmail.value);
-  userLogin.setPassword(inputPassword.value);
-  form.reset();
-  console.log(`email: ${userLogin.email}`);
-  console.log(`password: ${userLogin.password}`);
 });
